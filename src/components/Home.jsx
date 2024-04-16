@@ -32,7 +32,7 @@ const Home = () => {
       const response = await axios.get(`${api}`);
       setData(response.data);
     } catch (error) {
-      console.log("error", error);
+      // console.log("error", error);
     }
   };
   return (
