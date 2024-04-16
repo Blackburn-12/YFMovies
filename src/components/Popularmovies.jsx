@@ -29,7 +29,7 @@ const Popularmovies = () => {
   const fetchPopularMovies = async () => {
     try {
       const response = await axios.get(`${popularApi}`);
-      console.log(response.data);
+      // console.log(response.data);
       setData(response.data);
     } catch (error) {
       console.log("Error", error);
