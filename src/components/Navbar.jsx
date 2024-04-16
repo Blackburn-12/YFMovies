@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
-const Navbar = ({ setSearchQuery }) => {
+const Navbar = ({ setSearchQuery, setCurrentPage }) => {
   const [search, setSearch] = useState("");
   const [toggle, setToggle] = useState(false);
 
@@ -12,6 +12,7 @@ const Navbar = ({ setSearchQuery }) => {
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
       setSearchQuery(search);
+      // setCurrentPage(1);
     }
   };
 
@@ -19,7 +20,7 @@ const Navbar = ({ setSearchQuery }) => {
     <>
       <header>
         <nav>
-          <div className="p-4 flex justify-between items-center mx-auto">
+          <div className=" p-4 flex justify-between items-center mx-auto">
             {/* logo div */}
             <div>
               <a href="/">
@@ -63,24 +64,8 @@ const Navbar = ({ setSearchQuery }) => {
             </div>
 
             {/* links div */}
-            <div>
-              <ul className="max-lg:hidden flex flex-1 gap-8">
-                <Link
-                  className="font-Kanit font-normal block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 text-white md:hover:text-primary"
-                  to="/"
-                >
-                  Home
-                </Link>
-                <Link
-                  className="font-Kanit font-normal block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 text-white md:hover:text-primary"
-                  to="/Popularmovies"
-                >
-                  Popular Movies
-                </Link>
-              </ul>
-            </div>
 
-            <div className="hidden max-lg:block ">
+            <div className=" max-lg:block ">
               <span onClick={toggleButton}>
                 {toggle ? (
                   <svg
@@ -120,13 +105,13 @@ const Navbar = ({ setSearchQuery }) => {
                 >
                   <ul className="list-none flex flex-col justify-end items-center flex-1 md:gap-3">
                     <Link
-                      className="font-Kanit font-normal block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 text-white md:hover:text-primary"
+                      className="font-Kanit font-normal block py-2 px-3  rounded md:p-0 text-white  hover:text-primary"
                       to="/"
                     >
                       Home
                     </Link>
                     <Link
-                      className="font-Kanit font-normal block py-2 px-3  rounded hover:bg-gray-100 md:hover:bg-transparent  md:p-0 text-white md:hover:text-primary"
+                      className="font-Kanit font-normal block py-2 px-3  rounded md:p-0 text-white hover:text-primary"
                       to="/Popularmovies"
                     >
                       Popular Movies
